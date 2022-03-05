@@ -23,9 +23,63 @@ class Face : public Emoji{
 
 class EmptyFace : public Face{
     protected:
-        Point p;
-        int r;
+        Point centre1;
+        Point centre2;
+        int r_2;
     public:
-        EmptyFace(Point c, int r, int r_eye, Point c_1, Point c_2) : Face{c, r} {}
+        EmptyFace(Point c, int r, Point centre1, Point centre2, int r_2);
+        virtual void draw(AnimationWindow& win) override;
         
+};
+
+class SurprisedFace : public EmptyFace{
+    protected:
+        Point centre;
+        int width;
+        int height;
+        int start_degree;
+        int end_degree;
+    public:
+        SurprisedFace(Point c, int r, Point centre1, Point centre2, int r_2, Point centre, int width, int height, int start_degree, int end_degree);
+        virtual void draw(AnimationWindow& win) override;
+};
+
+class BoredFace : public EmptyFace{
+    protected:
+        Point start;
+        Point end;
+    public:
+        BoredFace(Point c, int r, Point centre1, Point centre2, int r_2, Point start, Point end);
+        virtual void draw(AnimationWindow& win) override;
+
+};
+
+class SmilingFace : public EmptyFace{
+      protected:
+        Point centre;
+        int width;
+        int height;
+        int start_degree;
+        int end_degree;
+    public:
+        SmilingFace(Point c, int r, Point centre1, Point centre2, int r_2, Point centre, int width, int height, int start_degree, int end_degree);
+        virtual void draw(AnimationWindow& win) override;
+
+};
+
+class WinkingFace : public Face{
+    protected:
+        Point centre1;
+        Point start;
+        Point end;
+        int r_2;
+        Point centre;
+        int width;
+        int height;
+        int start_degree;
+        int end_degree;
+    public:
+        WinkingFace(Point c, int r, Point centre1, Point start, Point end, int r_2, Point centre, int width, int height, int start_degree, int end_degree);
+        virtual void draw(AnimationWindow& win) override;
+
 };
