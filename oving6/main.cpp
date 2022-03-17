@@ -15,12 +15,20 @@ string getCapital(const string& country){
 										i stedet for [] for å finne value til tilhørende key */
 }
 
+ostream& operator<<(ostream& os, const map<string, string> m){
+    cout << "Capitals: " << endl;
+	for (auto& el : m){
+		os << getCapital(el.first) << endl;
+	}
+	return os;
 
+}
 
 int main()
 {
 	print_number_of_chars("grunnlov.txt");
-
+	cout << capitalsMap;
+	cout << "dfhhfdhfd"<<endl;
 	cout << "Capitals: " << endl;
 	for (auto& el : capitalsMap){
 		cout << getCapital(el.first) << endl;
@@ -40,6 +48,7 @@ int main()
 	Temps t;
 	ifstream tem{"temperatures.txt"};
 	tem >> t;
+	
 	
 }
 

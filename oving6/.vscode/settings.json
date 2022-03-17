@@ -2,6 +2,6 @@
     "tdt4102.isProjectFolder": true,
     "files.associations": {
         "*.rmd": "markdown",
-        "ostream": "cpp"
+        "istream": "cpp"
     }
 }
