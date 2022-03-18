@@ -55,20 +55,25 @@ ostream& operator<<(ostream &os,const Matrix &Matrix){
 
 Matrix::Matrix(const Matrix &rhs) : matrix{nullptr}{
     matrix = new double*[rhs.getRows()];
+    rows = rhs.getRows();
+    columns = rhs.getColumns();
 
-    for (int i = 0; i < rhs.getRows(); i++)
-            matrix[i] = new double[rhs.getColumns()];
+    //for (int i = 0; i < rhs.getRows(); i++)
+    //        matrix[i] = new double[rhs.getColumns()];
 
     for(int i = 0; i < rhs.getRows(); i++){
+        matrix[i] = new double[rhs.getColumns()];
         for(int j = 0; j < rhs.getColumns(); j++){
-            matrix[i][j] = rhs.get(i,j);
+            this->matrix[i][j] = rhs.get(i,j);
+
+       
         }
     }
 }
    
 template<class T> void swap( T& a, T& b);
 
-Matrix &Matrix::operator=(Matrix &m){
+Matrix &Matrix::operator=(Matrix m){
     std::swap(this-> columns, m.columns);
     std::swap(this-> rows, m.rows);
     std::swap(this-> matrix, m.matrix);
@@ -76,7 +81,7 @@ Matrix &Matrix::operator=(Matrix &m){
 }
 
 
-Matrix &Matrix::operator+=(Matrix &m){
+Matrix &Matrix::operator+=(Matrix m){
     for(int i = 0; i < m.rows; i++){
         for(int j = 0; j < m.columns; j++){
            matrix[i][j] +=  m.get(i,j);
@@ -86,13 +91,14 @@ Matrix &Matrix::operator+=(Matrix &m){
 }
 
 
-Matrix &Matrix::operator+(Matrix &m){
-    Matrix new_mat(m.getRows(), m.getColumns());
+Matrix Matrix::operator+(Matrix m){
+    //skjønner ikke feilen...
     for(int i = 0; i < m.getRows(); i++){
         for(int j = 0; j < m.getColumns(); j++){
-           new_mat.matrix[i][j] = matrix[i][j] + m.get(i,j);
+           m.matrix[i][j] += matrix[i][j];
         }
     }
-    return new_mat;
+
+    return m;
 }
 

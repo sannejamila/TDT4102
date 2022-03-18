@@ -12,6 +12,7 @@ int main()
 	matrix_of_zeros.set(1,1,1);
 
 	Matrix A = Matrix(2,2);
+	
 	A.set(0,0,1.0);
 	A.set(0,1,2.0);
 	A.set(1,0,3.0);
@@ -30,12 +31,17 @@ int main()
 	C.set(1,0,1.5);
 	C.set(1,1,2.0);
 
+
 	cout << A << endl;
 	cout << B << endl;
 	cout << C << endl;
+	cout << "a+b"<<endl;
+	//A = B + C;// gir feil
+	cout <<"+="<<endl;
+	A += B + C;// gir feil
 
-
-	A = B + C;
+	//A = B; //funker
+	//A += C; //funker
 
 	cout << A << endl; 
 	

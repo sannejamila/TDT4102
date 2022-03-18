@@ -18,7 +18,7 @@ class Matrix{
         int getRows() const;
         int getColumns() const;
         friend ostream& operator<<(ostream &os,const Matrix &Matrix);
-        Matrix &operator=(Matrix &m);
-        Matrix &operator+=(Matrix &m);
-        Matrix &operator+(Matrix &m);
+        Matrix &operator=(Matrix m);
+        Matrix &operator+=(Matrix m);
+        Matrix operator+(Matrix m);
 };
