@@ -67,3 +67,4 @@ void Meeting::addParticipant(shared_ptr<Person> Person){
     return os;
  }
 
+//Mangler siste funksjon
