@@ -15,3 +15,5 @@ bool Car::hasFreeSeats() const{
 void Car::reserveFreeSeat(){
     freeSeats--;
 }
+
+Car::Car(int seats) : freeSeats{seats} {}
