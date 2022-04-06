@@ -3,10 +3,12 @@
 #include "task1.h"
 #include "task2.h"
 #include <set>
+#include "task4.h"
 using namespace std;
 
 int main()
 {
+	srand(time(0));
 	vector<string> vec;
 
 	vector<string>::iterator it;
@@ -57,5 +59,26 @@ int main()
 	for(l_it = l.begin(); l_it != l.end(); l_it++){
 		cout << *l_it;
 	}
+	int a = 1;
+	int b = 2;
+	int c = maximum<int>(a, b);
+		// c er nå 2.
+	double d = 2.4;
+	double e = 3.2;
+	double f = maximum<double>(d,e);
+	// f er nå 3.2
+
+	cout << "c: " << c << "f: " << f << endl;
+
+	vector<int> v;
+	vector<int>::iterator s;
+	v = {1,2,3,4,5,6,7,8,9};
+
+	shuffle<int>(v);
+
+	for(s = v.begin(); s != v.end(); s++){
+		cout << *s << endl;
+	}
 }
+
 
