@@ -1,6 +1,8 @@
 #include <vector>
 #include <iostream>
 #include "task1.h"
+#include "task2.h"
+#include <set>
 using namespace std;
 
 int main()
@@ -24,6 +26,36 @@ int main()
 			cout << *i << endl;
 	} 
 
+	replace(vec, "abc", "hallo");
 
+	std::set<string> sett;
+
+	sett = {"hei", "katt", "hest"};
+
+	std::set<string>::iterator it2;
+
+	for(it2 = sett.begin(); it2 != sett.end(); it2++){
+		cout << *it2 << endl;
+	}
+
+	replace_set(sett, "hei", "hallo");
+
+	for(it2 = sett.begin(); it2 != sett.end(); it2++){
+		cout << *it2 << endl;
+	}
+
+
+	list<Person> l;
+
+	l = {Person("Sanne", "Olsen"), Person("Eric", "Karlsen")};
+	Person p = Person("Ylva", "Schuch");
+
+	insertOrdered(l, p);
+
+	list<Person>::iterator l_it;
+
+	for(l_it = l.begin(); l_it != l.end(); l_it++){
+		cout << *l_it;
+	}
 }
 
