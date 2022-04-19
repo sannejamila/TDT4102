@@ -10,7 +10,7 @@ T maximum(T a,T b){
     }
 }
 
-//For å bruke denne for egendefinerte klasser må du overlaste > operatoren først.
+//For å bruke denne fo+r egendefinerte klasser må du overlaste > operatoren først.
 
 int random_int(int max, int min){
     return rand()%(max-min + 1) + min;
